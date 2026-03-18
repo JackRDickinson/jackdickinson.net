@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Dickinson</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .top-bar {
+            text-align: right;
+            padding: 8px 16px;
+            font-size: 13px;
+            background: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .top-bar a {
+            color: #00c;
+            text-decoration: underline;
+            margin-left: 12px;
+            font-size: 13px;
+        }
+
+        .main {
+            margin-top: 100px;
+        }
+
+        .name {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
+
+        .bio {
+            max-width: 450px;
+            margin: 20px auto 30px auto;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .links {
+            margin: 20px auto;
+        }
+
+        .links a {
+            color: #00c;
+            text-decoration: underline;
+            font-size: 14px;
+            margin: 0 10px;
+        }
+
+        .links a:hover {
+            color: #f00;
+        }
+
+        .construction {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .construction b { color: #EA4335; }
+
+        hr {
+            width: 450px;
+            margin: 25px auto;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        .counter-box {
+            margin: 30px auto;
+            padding: 16px 30px;
+            display: inline-block;
+            border: 2px solid #ccc;
+            background: #f9f9f9;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .counter-box .number {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 28px;
+            font-weight: bold;
+            color: #4285F4;
+            letter-spacing: 3px;
+            display: block;
+            margin-top: 6px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 12px;
+            background: #f0f0f0;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="mailto:jack@jackdickinson.net">Email</a>
+        <a href="https://www.instagram.com/jackryan.dng/">Instagram</a>
+        <a href="https://open.spotify.com/user/jacksmusic2005">Spotify</a>
+        <a href="https://www.linkedin.com/in/jackryandickinson/">LinkedIn</a>
+    </div>
+
+    <div class="main">
+        <div class="name">Jack Dickinson</div>
+
+        <div class="bio">
+            I'm Jack — a student at American University studying accounting with plans to pursue a JD. When I'm not in the books, you can find me shooting photography, competing in mock trial, or at the gym.
+        </div>
+
+        <div class="links">
+            <a href="mailto:jack@jackdickinson.net">Email</a>
+            <a href="https://www.instagram.com/jackryan.dng/">Instagram</a>
+            <a href="https://open.spotify.com/user/jacksmusic2005">Spotify</a>
+            <a href="https://www.linkedin.com/in/jackryandickinson/">LinkedIn</a>
+        </div>
+
+        <hr>
+
+        <p class="construction"><b>*** UNDER CONSTRUCTION ***</b></p>
+
+        <div class="counter-box">
+            Visitors to this page
+            <span class="number" id="visitor-count">------</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Last updated: <span id="last-updated"></span></p>
+        <p>Best viewed in Netscape Navigator 4.0 at 800x600 &copy; 2005</p>
+    </div>
+
+    <script>
+        // --- Global visitor counter using counterapi.dev (starts at 0) ---
+        (function() {
+            fetch('https://api.counterapi.dev/v1/jackdickinson-net-v2/pageviews/up')
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    var count = data.count || 0;
+                    document.getElementById('visitor-count').textContent = String(count).padStart(6, '0');
+                })
+                .catch(function() {
+                    document.getElementById('visitor-count').textContent = '------';
+                });
+        })();
+
+        // --- Last updated timestamp ---
+        (function() {
+            document.getElementById('last-updated').textContent = document.lastModified;
+        })();
+    </script>
+
+</body>
+</html>
